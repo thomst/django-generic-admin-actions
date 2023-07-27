@@ -1,0 +1,14 @@
+{% extends 'admin/change_list.html' %}
+
+{% block search %}
+    {{ block.super }}
+    {% if generic_actions_form %}
+        <div class="actions">
+            <form action="run_generic_action/" method="POST">
+                {% csrf_token %}
+                {{ generic_actions_form }}
+                <button type="submit" class="button" title="Run the selected generic action">Go</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
