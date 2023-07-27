@@ -6,8 +6,8 @@ Welcome to django-generic-admin-actions
    :target: https://github.com/thomst/django-generic-admin-actions/actions/workflows/ci.yml
    :alt: Run tests for django-generic-admin-actions
 
-.. image:: https://coveralls.io/repos/github/thomst/django-generic-admin-actions/badge.svg?branch=master
-   :target: https://coveralls.io/github/thomst/django-generic-admin-actions?branch=master
+.. image:: https://coveralls.io/repos/github/thomst/django-generic-admin-actions/badge.svg?branch=main
+   :target: https://coveralls.io/github/thomst/django-generic-admin-actions?branch=main
    :alt: coveralls badge
 
 .. image:: https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
