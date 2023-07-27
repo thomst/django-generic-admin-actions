@@ -4,6 +4,7 @@ from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Permission
 from django.db.utils import IntegrityError
+from generic_admin_actions import __version__
 from ...models import ModelOne
 
 
