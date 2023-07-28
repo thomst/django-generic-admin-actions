@@ -42,5 +42,4 @@ class GenericActionsModelAdmin(admin.ModelAdmin):
     def run_generic_action(self, request):
         action = request.POST['generic_action']
         actions = self.get_generic_actions()
-        actions[action](self, request)
-        return HttpResponseRedirect('../')
+        return actions[action](self, request) or HttpResponseRedirect('../')
