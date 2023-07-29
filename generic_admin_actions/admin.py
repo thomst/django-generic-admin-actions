@@ -1,9 +1,10 @@
+from django.db import models
 from django.contrib import admin
 from django.contrib.admin.utils import model_format_dict
 from django.contrib import messages
-from django.db import models
-from django.http import HttpResponseBase
+from django.http.response import HttpResponseBase
 from django.http import HttpResponseRedirect
+from django.utils.text import capfirst
 from .forms import GenericActionsForm
 
 
@@ -138,7 +139,10 @@ class GenericActionsMixin:
         else:
             return None
 
-        description = self._get_action_description(func, action)
+        if hasattr(func, 'short_description'):
+            description = func.short_description
+        else:
+            description = capfirst(action.replace('_', ' '))
         return func, action, description
 
 
