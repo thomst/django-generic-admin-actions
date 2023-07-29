@@ -4,7 +4,6 @@ from django.contrib.admin.utils import model_format_dict
 from django.contrib import messages
 from django.http.response import HttpResponseBase
 from django.http import HttpResponseRedirect
-from django.utils.text import capfirst
 from .forms import GenericActionsForm
 
 
@@ -90,7 +89,7 @@ class GenericActionsMixin:
     def _get_base_generic_actions(self):
         """Return the list of actions, prior to any request-based filtering."""
         actions = []
-        actions = (self.get_generic_action(action) for action in self.generic_actions or [])
+        actions = (self.get_action(action) for action in self.generic_actions or [])
         # get_action might have returned None, so filter any of those out.
         actions = [action for action in actions if action]
 
@@ -118,32 +117,6 @@ class GenericActionsMixin:
             choice = (name, description % model_format_dict(self.opts))
             choices.append(choice)
         return choices
-
-    def get_generic_action(self, action):
-        """
-        Return a given action from a parameter, which can either be a callable,
-        or the name of a method on the ModelAdmin.  Return is a tuple of
-        (callable, name, description).
-        """
-        # If the action is a callable, just use it.
-        if callable(action):
-            func = action
-            action = action.__name__
-
-        # Next, look for a method. Grab it off self.__class__ to get an unbound
-        # method instead of a bound one; this ensures that the calling
-        # conventions are the same for functions and methods.
-        elif hasattr(self.__class__, action):
-            func = getattr(self.__class__, action)
-
-        else:
-            return None
-
-        if hasattr(func, 'short_description'):
-            description = func.short_description
-        else:
-            description = capfirst(action.replace('_', ' '))
-        return func, action, description
 
 
 class GenericActionsModelAdmin(GenericActionsMixin, admin.ModelAdmin):
