@@ -2,6 +2,7 @@
 from django.template import Library
 from django.contrib.admin.templatetags.base import InclusionAdminNode
 
+
 register = Library()
 
 
@@ -16,4 +17,9 @@ def generic_admin_actions(context):
 
 @register.tag(name='generic_admin_actions')
 def generic_admin_actions_tag(parser, token):
-    return InclusionAdminNode(parser, token, func=generic_admin_actions, template_name='generic_actions.html')
+    return InclusionAdminNode(
+        parser,
+        token,
+        func=generic_admin_actions,
+        template_name='generic_actions.html'
+    )
