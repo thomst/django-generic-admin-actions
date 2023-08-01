@@ -21,9 +21,10 @@ Welcome to django-generic-admin-actions
 
 Description
 ===========
-Django-generic-admin-actions provides an easy way to add an action form to a
-change-list to run generic actions for a specific model independently from the
-item selection.
+Django-generic-admin-actions are admin actions without an item selection. They
+work exactly like original admin actions but without taking a queryset. This is
+useful for actions that are model (and not object) related or that should
+manipulate model objects as a whole.
 
 
 Installation
@@ -32,38 +33,41 @@ Install from pypi.org::
 
     pip install django-generic-admin-actions
 
-Setup
-=====
 
+Getting started
+===============
 Add generic_admin_actions to your installed apps::
 
     INSTALLED_APPS = [
         'generic_admin_actions',
+        'django.contrib.admin',
         ...
     ]
 
-Use the GenericActionsModelAdmin class and add a generic action::
+Since we overwrite the change_list.html template the app must be listed before
+django's admin-site.
 
-    from generic_admin_actions import GenericActionsModelAdmin
+Use the GenericActionsMixin for your ModelAdmin classes and add some actions::
+
+    from django.contrib import admin
+    from generic_admin_actions import GenericActionsMixin
 
     def my_action(modeladmin, request):
         # Do some stuff here.
 
-    class MyModelAdmin(GenericActionsModelAdmin):
+    class MyModelAdmin(GenericActionsMixin, admin.ModelAdmin):
         ...
         generic_actions = [
             my_action,
             ...
         ]
 
-Setup with an intermediate page
-===============================
-
-TODO
+Generic admin actions working all the same as original admin actions with the
+difference that their don't take a queryset. So for more advanced setups like
+actions with intermediate pages please follow django's official documentation.
 
 
 Usage
 =====
-
 On your model's change-list-view choose the generic action from the dropdown and
 press the "Go" button.
