@@ -117,7 +117,3 @@ class GenericActionsMixin:
             choice = (name, description % model_format_dict(self.opts))
             choices.append(choice)
         return choices
-
-
-class GenericActionsModelAdmin(GenericActionsMixin, admin.ModelAdmin):
-    pass
