@@ -7,7 +7,12 @@ from django.http import HttpResponseRedirect
 from .forms import GenericActionsForm
 
 
+# This is mainly slightly adjusted django-code. Since the whole implementation
+# of generic-admin-actions follows django's admin-actions implementation.
 class GenericActionsMixin:
+    """
+    A Mixin for ModelAdmin classes to add generic admin actions.
+    """
     generic_actions = ()
     generic_action_form = GenericActionsForm
 
