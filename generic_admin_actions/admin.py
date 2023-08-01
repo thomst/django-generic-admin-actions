@@ -65,10 +65,9 @@ class GenericActionsMixin:
         try:
             data.update({"generic_action": data.getlist("generic_action")[action_index]})
         except IndexError:
-            # If we didn't get an action from the chosen form that's invalid
-            # POST data, so by deleting action it'll fail the validation check
-            # below. So no need to do anything here
-            pass
+            # An IndexError means we have invalid form data. By setting the
+            # generic_action to None we make sure the form validation fails.
+            data['generic_action'] = None
 
         action_form = self.generic_action_form(data, auto_id=None)
         action_form.fields["generic_action"].choices = self.get_generic_action_choices(request)
