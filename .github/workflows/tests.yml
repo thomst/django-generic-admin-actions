@@ -1,4 +1,4 @@
-name: CI
+name: Tests
 
 on:
   push:
@@ -19,26 +19,32 @@ jobs:
           - python-version: "3.8"
             django-version: Django==3.0
 
-          - python-version: "3.8"
+          - python-version: "3.9"
             django-version: Django==3.1
 
-          - python-version: "3.8"
+          - python-version: "3.9"
             django-version: Django==3.2
 
-          - python-version: "3.9"
+          - python-version: "3.10"
             django-version: Django==4.0
 
-          - python-version: "3.9"
+          - python-version: "3.10"
             django-version: Django==4.1
 
-          - python-version: "3.10"
+          - python-version: "3.11"
             django-version: Django==4.2
 
           - python-version: "3.11"
             django-version: Django==5.0
 
-          - python-version: "3.11"
+          - python-version: "3.12"
             django-version: Django==5.1
+
+          - python-version: "3.12"
+            django-version: Django==5.2
+
+          - python-version: "3.13"
+            django-version: Django==6.0
 
     steps:
     - name: Checkout repository
