@@ -31,8 +31,9 @@ else:
 setup(
     name="django-generic-admin-actions",
     version=version,
-    description="TODO",
+    description="Use item unspecific admin actions in Django admin's changelist view",
     long_description=read("README.rst"),
+    long_description_content_type="text/x-rst",
     author="Thomas Leichtfuß",
     author_email="thomas.leichtfuss@posteo.de",
     url="https://github.com/thomst/django-generic-admin-actions",
