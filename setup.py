@@ -2,7 +2,6 @@
 
 import os
 from setuptools import setup
-from setuptools import find_namespace_packages
 from pathlib import Path
 
 
@@ -39,8 +38,9 @@ setup(
     url="https://github.com/thomst/django-generic-admin-actions",
     license="BSD License",
     platforms=["OS Independent"],
-    packages=find_namespace_packages(exclude=["tests"]),
-    include_package_data=True,
+    packages=['generic_admin_actions', 'generic_admin_actions.templatetags'],
+    package_data={'generic_admin_actions': ['templates/**'],},
+    include_package_data=False,
     install_requires=[
         "Django>=2.2",
     ],
@@ -60,7 +60,6 @@ setup(
         "Framework :: Django :: 6.0",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
@@ -75,5 +74,4 @@ setup(
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries :: Application Frameworks",
     ],
-    zip_safe=True,
 )
