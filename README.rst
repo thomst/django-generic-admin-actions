@@ -10,9 +10,9 @@ Welcome to django-generic-admin-actions
    :target: https://coveralls.io/github/thomst/django-generic-admin-actions?branch=main
    :alt: coveralls badge
 
-.. image:: https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue
-   :target: https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue
-   :alt: python: 3.8, 3.9, 3.10, 3.11, 3.12, 3.13
+.. image:: https://img.shields.io/badge/python-3-blue
+   :target: https://img.shields.io/badge/python-3-blue
+   :alt: python: 3
 
 .. image:: https://img.shields.io/badge/django-2.2%20%7C%203.0%20%7C%203.1%20%7C%203.2%20%7C%204.0%20%7C%204.1%20%7C%204.2%20%7C%205.0%20%7C%205.1%20%7C%205.2%20%7C%206.0-orange
    :target: https://img.shields.io/badge/django-2.2%20%7C%203.0%20%7C%203.1%20%7C%203.2%20%7C%204.0%20%7C%204.1%20%7C%204.2%20%7C%205.0%20%7C%205.1%20%7C%205.2%20%7C%206.0-orange
