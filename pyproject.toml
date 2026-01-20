@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-generic-admin-actions"
+authors = [
+    {name = "Thomas Leichtfuß", email = "thomas.leichtfuss@posteo.de"},
+]
+description = "Use item unspecific admin actions in Django admin's changelist view"
+readme = "README.rst"
+requires-python = ">=3.8"
+keywords = ["django", "django-admin", "admin-actions"]
+license = "BSD-3-Clause"
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Framework :: Django :: 6.0",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+dependencies = [
+    "Django>=2.2",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/thomst/django-generic-admin-actions"
+Repository = "https://github.com/thomst/django-generic-admin-actions"
+Documentation = "https://github.com/thomst/django-generic-admin-actions#readme"
+
+[tool.setuptools]
+packages = ["generic_admin_actions", "generic_admin_actions.templatetags"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+generic_admin_actions = ["templates/**"]
+
+[tool.setuptools.dynamic]
+version = {attr = "generic_admin_actions.__version__.__version__"}
