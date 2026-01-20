@@ -11,7 +11,7 @@ description = "Use item unspecific admin actions in Django admin's changelist vi
 readme = "README.rst"
 requires-python = ">=3.8"
 keywords = ["django", "django-admin", "admin-actions"]
-license = "BSD-3-Clause"
+license = { text = "BSD-3-Clause"}
 classifiers = [
     "Framework :: Django",
     "Framework :: Django :: 2.2",
