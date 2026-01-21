@@ -13,6 +13,7 @@ requires-python = ">=3.8"
 keywords = ["django", "django-admin", "admin-actions"]
 license = { text = "BSD-3-Clause"}
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
     "Framework :: Django",
     "Framework :: Django :: 2.2",
     "Framework :: Django :: 3.0",
